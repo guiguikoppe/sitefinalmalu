@@ -1,0 +1,250 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background-color: #72986c;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== NAVBAR ===== */
+header {
+  background: linear-gradient(90deg, var(--verde-principal), var(--verde-escuro));
+  color: var(--branco);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--dourado-suave);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--dourado-suave);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  padding: 0 20px;
+  flex: 1;
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* ===== CARD BASE ===== */
+.card {
+  width: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== VIDEO ===== */
+.card video {
+  width: 100%;
+  height: auto;
+  border-radius: 20px 20px 0 0;
+  object-fit: cover;
+  display: block;
+  max-height: 550px;
+  transition: transform 0.5s ease;
+}
+
+.card:hover video {
+  transform: scale(1.05);
+}
+
+/* ===== CARD BODY ===== */
+.card-body {
+  flex-grow: 1;
+  width: 100%;
+  padding: 25px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  color: #fff;
+}
+
+.price {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.price:hover {
+  background-color: #2e6f40;
+  transform: scale(1.05);
+}
+
+.card-body h2 {
+  margin: 10px 0;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 15px 0;
+  opacity: 0.95;
+  color: #fff;
+  text-align: justify;
+}
+
+/* ===== CORES DOS CARDS ===== */
+.bronze .card-body {
+  background-color: #9f6bea;
+}
+
+.prata .card-body {
+  background-color: #58b250;
+}
+
+.diamante .card-body {
+  background-color: #47bda7;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+  .cards {
+    gap: 30px;
+  }
+
+  .card {
+    width: 320px;
+  }
+
+  .card video {
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 805px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 420px;
+  }
+
+  .card video {
+    max-height: 250px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .price {
+    font-size: 1.1rem;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 40px auto;
+    padding: 0 10px;
+  }
+
+  .card {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .card video {
+    max-height: 200px;
+  }
+
+  .card-body h2 {
+    font-size: 1.1rem;
+  }
+
+  .card-body p {
+    font-size: 0.85rem;
+  }
+
+  .price {
+    font-size: 1rem;
+    padding: 6px 18px;
+  }
+}

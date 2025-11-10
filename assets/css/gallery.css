@@ -1,0 +1,186 @@
+body {
+  background: linear-gradient(135deg, #e8f5e9, #fff5f7);
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background: linear-gradient(90deg, var(--verde-principal), var(--verde-escuro));
+  color: var(--branco);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  width: 98%;
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--dourado-suave);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--dourado-suave);
+}
+
+/* 🌸 Seção introdutória */
+.intro {
+  text-align: center;
+
+  animation: fadeIn 2s ease-in-out;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  color: var(--verde-principal);
+  text-shadow: 0 2px 10px rgba(31, 122, 77, 0.2);
+}
+
+.intro p {
+  color: #444;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* 💞 Galeria */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  width: 92%;
+  max-width: 1400px;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1.8s ease-in-out;
+}
+
+/* Polaroid-style cards */
+.gallery-item {
+  background: var(--branco);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagens e vídeos */
+.gallery-item img,
+.gallery-item video {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+  transform: scale(1.05);
+}
+
+/* Legenda */
+.gallery-item p {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 8px;
+}
+
+/* 💫 Animações suaves */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌹 Rodapé */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: var(--verde-principal);
+  color: var(--branco);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+@keyframes floatHearts {
+  from { transform: translate(-50%, 0); }
+  to { transform: translate(-50%, -30px); }
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .gallery-item img,
+  .gallery-item video {
+    height: 250px;
+  }
+
+  .gallery-item p {
+    font-size: 0.9rem;
+  }
+}

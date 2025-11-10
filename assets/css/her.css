@@ -1,0 +1,224 @@
+/* 🔄 Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, var(--verde-claro) 0%, #000000 100%);
+  color: var(--preto);
+  overflow-x: hidden;
+}
+
+/* ===============================
+   🔝 CABEÇALHO
+   =============================== */
+header {
+  background: linear-gradient(90deg, var(--verde-principal), var(--verde-escuro));
+  color: var(--branco);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--dourado-suave);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--dourado-suave);
+}
+/* ===============================
+   🌄 SEÇÕES DE CONTEÚDO
+   =============================== */
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem;
+  color: var(--branco);
+  min-height: 80vh;
+  overflow: hidden;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Efeito de sobreposição */
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Textos */
+section h1,
+section h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  animation: fadeInUp 1.2s ease;
+}
+
+section h1 strong {
+  color: var(--verde-menta);
+  text-shadow: 0 0 12px rgba(163, 217, 165, 0.6);
+}
+
+section h3 {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #f5f5f5;
+  animation: fadeInUp 1.8s ease;
+}
+
+/* Efeitos visuais */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   🖼️ IMAGENS DE FUNDO
+   =============================== */
+section img {
+  display: none;
+}
+
+.one {
+  background: url("../imgs/malu01.png") center/cover no-repeat;
+  align-items: flex-start;
+}
+
+.two {
+  background: url("../imgs/malu02.jpeg") center/cover no-repeat;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.three {
+  background: url("../imgs/Captura\ de\ tela\ 2025-11-10\ 102721.png") center/cover no-repeat;
+  align-items: flex-start;
+}
+
+.four {
+  background: url("../imgs/malu06.png") center/cover no-repeat;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Pequena transição entre seções */
+section + section {
+  border-top: 3px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ===============================
+   💫 EFEITOS GERAIS
+   =============================== */
+section:hover::before {
+  background: rgba(0, 0, 0, 0.55);
+  transition: background 0.3s ease;
+}
+
+section h1 strong:hover {
+  color: var(--dourado-suave);
+  transition: color 0.3s ease;
+}
+
+/* ===============================
+   📱 Responsividade
+   =============================== */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0.5rem;
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  section h1 {
+    font-size: 1.7rem;
+  }
+
+  section h3 {
+    font-size: 1rem;
+  }
+}
