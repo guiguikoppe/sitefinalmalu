@@ -1,0 +1,238 @@
+/* 🌍 Configuração global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(180deg, var(--verde-principal) 0%, var( --ciano) 80%);
+  color: var(--cinza-escuro);
+  line-height: 1.7;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 💕 Corações animados no fundo */
+body::before,
+body::after {
+  content: "♥";
+  position: absolute;
+  font-size: 60px;
+  color: rgba(255, 182, 193, 0.2);
+  animation: floatHearts 10s infinite ease-in-out;
+}
+
+body::after {
+  content: "♥";
+  right: 10%;
+  top: 20%;
+  animation-delay: 5s;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+  50% { transform: translateY(-20px) rotate(10deg); opacity: 0.6; }
+  100% { transform: translateY(0) rotate(-10deg); opacity: 0.4; }
+}
+
+/* 🧭 Cabeçalho */
+header {
+  background: linear-gradient(90deg, var(--verde-principal), var(--verde-escuro));
+  color: var(--branco);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--dourado-suave);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--dourado-suave);
+}
+
+
+/* 📜 Seção principal */
+.text-page {
+  background-color: var(--rosa-claro);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--verde-claro);
+  animation: fadeIn 1.5s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+/* ✨ Animação de aparição */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📝 Título e texto */
+.text-page h1 {
+  color: var(--verde-escuro);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.3rem;
+  position: relative;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(31, 122, 77, 0.2);
+}
+
+.text-page h1::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background-color: var(--verde-principal);
+  display: block;
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.text-page p {
+  text-align: justify;
+  font-size: 1.05rem;
+  color: var(--cinza-escuro);
+  margin-bottom: 1.8rem;
+  text-indent: 2rem;
+  line-height: 1.9;
+  transition: transform 0.3s ease;
+}
+
+.text-page p:hover {
+  transform: scale(1.01);
+}
+
+/* 💌 Citações */
+.text-page blockquote {
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  border-left: 6px solid var(--verde-principal);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  font-style: italic;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.text-page blockquote p {
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* 💚 TE VIVO - destaque */
+.text-page h1:last-of-type {
+  color: var(--verde-principal);
+  margin-top: 2.5rem;
+  font-size: 2.8rem;
+  text-shadow: 0 0 12px rgba(31, 122, 77, 0.4);
+  letter-spacing: 2px;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); color: var(--verde-principal); }
+  50% { transform: scale(1.05); color: var(--dourado-suave); }
+  100% { transform: scale(1); color: var(--verde-principal); }
+}
+
+/* 🌹 Detalhe inicial */
+.text-page p:first-letter {
+  font-size: 1.6rem;
+  color: var(--verde-principal);
+  font-weight: 700;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.4rem 0;
+    font-size: 1rem;
+  }
+
+  .text-page {
+    padding: 1.5rem;
+  }
+
+  .text-page h1 {
+    font-size: 1.7rem;
+  }
+
+  .text-page p {
+    font-size: 0.95rem;
+  }
+
+  .text-page h1:last-of-type {
+    font-size: 2rem;
+  }
+}

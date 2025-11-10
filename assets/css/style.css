@@ -1,0 +1,149 @@
+/* -----------------------------
+   🌿 Estilo Padrão - Site Verde
+   ----------------------------- */
+
+/* 🎨 Paleta de cores */
+
+:root {
+  --verde-escuro: #0b3d2e;
+  --verde-principal: #1f7a4d;
+  --verde-claro: #a3d9a5;
+  --branco: #ffffff;
+  --cinza-claro: #f2f2f2;
+  --cinza-escuro: #333333;
+  --dourado-suave: #f7d68b;
+  --rosa-claro: #f8dee3;
+  --rosa-suave: #ffb6b9;
+  --ciano: #54ecc6;
+  --verde-menta: #c9f0c7;
+  --preto: #101010;
+}
+/* 🌍 Configuração global */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: var(--cinza-claro);
+  color: var(--cinza-escuro);
+  line-height: 1.6;
+ 
+}
+
+/* 🧭 Cabeçalho */
+header {
+  background-color: var(--verde-principal);
+  color: var(--branco);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 800px;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--verde-escuro);
+}
+
+/* 📰 Conteúdo principal */
+main {
+  background-color: var(--branco);
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 📜 Títulos e textos */
+h2, h3, h4 {
+  color: var(--verde-escuro);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* 🔘 Botões */
+button, .btn {
+  background-color: var(--verde-principal);
+  color: var(--verde-escuro);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--verde-escuro);
+}
+
+/* 📦 Cards genéricos */
+.card {
+  background-color: var(--branco);
+  border: 1px solid var(--verde-claro);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 🦶 Rodapé */
+footer {
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* 📱 Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  header, footer {
+    padding: 1rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
